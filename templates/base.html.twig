@@ -16,12 +16,15 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
 	{% endblock %}
 </head>
+
+
 <body class="container">
-{% for message in app.flashes('notice') %}
+{% if app.user %}
+	{% for message in app.flashes('notice') %}
 	<div class="notice">
 		{{ message }}
 	</div>
-{% endfor %}
+	{% endfor %}
 <nav >
 	<ul>
 		<li>
@@ -33,8 +36,12 @@
 	<ul>
 		<li><a href="{{ path('home_index') }}">Home</a></li>
 		<li><a href="{{ path('product_index') }}">Products</a></li>
+		<li><a href="{{ path('app_logout') }}">Logout</a></li>
 	</ul>
 </nav>
+
+{% endif %}
+
 {% block body %}{% endblock %}
 </body>
 </html>

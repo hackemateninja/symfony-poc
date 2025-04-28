@@ -1,6 +1,22 @@
 {% extends 'base.html.twig' %}
 
+
+
+
 {% block body %}
-	<h1>Welcome</h1>
-	<a href="{{ path('product_index') }}">Products</a>
+	{% if app.user %}
+
+
+		<h1>Welcome</h1>
+		<a href="{{ path('product_index') }}">Products</a>
+	{% else %}
+		<h1>you are not logged in</h1>
+
+		<div class="grid">
+			<a href="{{  path('app_login')}}">Login</a>
+			<a href="{{ path('app_register') }}">Register</a>
+		</div>
+
+	{% endif %}
 {% endblock %}
+
