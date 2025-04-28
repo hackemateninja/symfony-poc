@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Edit product
+{% endblock %}
+
+{% block body %}
+	<main>
+		<header class="grid" style="grid-template-columns: 1fr auto auto;">
+			<nav aria-label="breadcrumb"  style="--pico-nav-breadcrumb-divider: '✨';">
+				<ul>
+					<li><a href="{{ path('product_index') }}">Products</a></li>
+					<li>{{ product.name }}</li>
+				</ul>
+			</nav>
+			<a href="{{ path('product_show', {id: product.id}) }}">
+				<button class="contrast">Cancel</button>
+			</a>
+			<a href="{{ path('product_new') }}">
+				<button>Create new one</button>
+			</a>
+		</header>
+
+		{% include 'product/_form.html.twig' %}
+	</main>
+{% endblock %}
+
+
+

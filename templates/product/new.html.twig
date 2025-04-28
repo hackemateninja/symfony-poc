@@ -5,16 +5,14 @@
 {% endblock %}
 
 {% block body %}
-	<main class="container">
-		<header>
+	<main >
+		<header class="grid" style="grid-template-columns: 1fr auto;">
 			<h1>Create new product</h1>
+			<a href="{{ path('product_index') }}">
+				<button>Cancel</button>
+			</a>
 		</header>
-		{{ form_start(form) }}
-			{{ form_row(form.name) }}
-			{{ form_row(form.description) }}
-			{{ form_row(form.size) }}
-			{{ form_row(form.save, {'label': 'Save'}) }}
-		{{ form_end(form) }}
+		{% include 'product/_form.html.twig' %}
 	</main>
 {% endblock %}
 

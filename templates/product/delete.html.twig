@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	delete product
+{% endblock %}
+
+
+{% block body %}
+
+	<dialog open>
+		<article>
+			<header>
+				<a href="{{ path('product_show', {id: product.id}) }}">
+					<button aria-label="Close" rel="prev"></button>
+				</a>
+				<p>
+					<strong>️⚠️ Are you sure to delete this?</strong>
+				</p>
+			</header>
+			<p>
+				You are deleting this product: <strong>{{ product.name }}</strong>.
+			</p>
+			<ul>
+				<li>Name:  {{ product.name }}</li>
+				<li>Description: {{ product.description }}</li>
+				<li>Size: {{ product.size }} (ml) </li>
+			</ul>
+			<footer>
+				<form method="post">
+					<button type="submit" class="secondary">Delete product</button>
+				</form>
+			</footer>
+		</article>
+	</dialog>
+{% endblock %}
+
+

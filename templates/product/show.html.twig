@@ -6,13 +6,21 @@
 
 
 {% block body %}
-	<div class="container">
-		<nav aria-label="breadcrumb"  style="--pico-nav-breadcrumb-divider: '✨';">
-			<ul>
-				<li><a href="{{ path('product_index') }}">Products</a></li>
-				<li>{{ product.name }}</li>
-			</ul>
-		</nav>
+	<main>
+		<header class="grid" style="grid-template-columns: 1fr auto auto;">
+			<nav aria-label="breadcrumb"  style="--pico-nav-breadcrumb-divider: '✨';">
+				<ul>
+					<li><a href="{{ path('product_index') }}">Products</a></li>
+					<li>{{ product.name }}</li>
+				</ul>
+			</nav>
+			<a href="{{ path('product_edit', {id: product.id}) }}">
+				<button>Edit product</button>
+			</a>
+			<a href="{{ path('product_delete', {id: product.id}) }}">
+				<button class="contrast">Delete product</button>
+			</a>
+		</header>
 		<table>
 			<thead>
 			<tr>
@@ -31,7 +39,7 @@
 			</tr>
 			</tbody>
 		</table>
-	</div>
+	</main>
 {% endblock %}
 
 

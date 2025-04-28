@@ -4,35 +4,35 @@
 
 {% block body %}
 
-    <div class="container">
-        <header class="grid" style="grid-template-columns: 1fr auto;">
-            <h1>Products</h1>
-            <a href="{{ path('product_new') }}">
-                <button>Add new product</button>
-            </a>
-        </header>
-        <table>
-            <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">Size (ML)</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for product in products %}
-                <tr>
-                    <th scope="row">
-                        <a href="{{ path('product_show', {id: product.id}) }}">
-                            {{ product.name }}
-                        </a>
-                    </th>
-                    <td>{{ product.description }}</td>
-                    <td>{{ product.size }}</td>
-                </tr>
-            {% endfor %}
+	<main>
+		<header class="grid" style="grid-template-columns: 1fr auto;">
+			<h1>Products</h1>
+			<a href="{{ path('product_new') }}">
+				<button>Add new product</button>
+			</a>
+		</header>
+		<table>
+			<thead>
+			<tr>
+				<th scope="col">Name</th>
+				<th scope="col">Description</th>
+				<th scope="col">Size (ML)</th>
+			</tr>
+			</thead>
+			<tbody>
+			{% for product in products %}
+				<tr>
+					<th scope="row">
+						<a href="{{ path('product_show', {id: product.id}) }}">
+							{{ product.name }}
+						</a>
+					</th>
+					<td>{{ product.description }}</td>
+					<td>{{ product.size }}</td>
+				</tr>
+			{% endfor %}
 
-            </tbody>
-        </table>
-    </div>
+			</tbody>
+		</table>
+	</main>
 {% endblock %}
