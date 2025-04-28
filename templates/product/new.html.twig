@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	New product
+{% endblock %}
+
+{% block body %}
+	<main class="container">
+		<header>
+			<h1>Create new product</h1>
+		</header>
+		{{ form_start(form) }}
+			{{ form_row(form.name) }}
+			{{ form_row(form.description) }}
+			{{ form_row(form.size) }}
+			{{ form_row(form.save, {'label': 'Save'}) }}
+		{{ form_end(form) }}
+	</main>
+{% endblock %}
+
+
+

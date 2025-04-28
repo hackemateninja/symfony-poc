@@ -4,6 +4,7 @@ namespace App\Factory;
 
 use App\Entity\Product;
 use Zenstruck\Foundry\Persistence\PersistentProxyObjectFactory;
+use function Zenstruck\Foundry\set;
 
 /**
  * @extends PersistentProxyObjectFactory<Product>
@@ -75,6 +76,8 @@ final class ProductFactory extends PersistentProxyObjectFactory
             'name' => self::faker()->randomElement(self::PRODUCT_NAMES),
 	          'description' => self::faker()->randomElement(self::DESCRIPTIONS),
             'size' => self::faker()->randomElement(self::SIZES),
+	          'createdAt' => self::faker()->dateTime(),
+	          'updatedAt' => self::faker()->dateTime(),
         ];
     }
 

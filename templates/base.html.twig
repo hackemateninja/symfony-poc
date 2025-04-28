@@ -16,6 +16,19 @@
         {% endblock %}
     </head>
     <body>
+        <nav class="container">
+            <ul>
+                <li>
+                    <a href="{{ path('home_index') }}">
+                        <strong>Simple symfony crud</strong>
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li><a href="{{ path('home_index') }}">Home</a></li>
+                <li><a href="{{ path('product_index') }}">Products</a></li>
+            </ul>
+        </nav>
         {% block body %}{% endblock %}
     </body>
 </html>

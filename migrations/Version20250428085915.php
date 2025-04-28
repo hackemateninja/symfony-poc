@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20250428035407 extends AbstractMigration
+final class Version20250428085915 extends AbstractMigration
 {
     public function getDescription(): string
     {
@@ -21,7 +21,9 @@ final class Version20250428035407 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->addSql(<<<'SQL'
-            CREATE TABLE product (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name VARCHAR(255) NOT NULL, description CLOB DEFAULT NULL, size INTEGER NOT NULL)
+            CREATE TABLE product (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, name VARCHAR(255) NOT NULL, description CLOB DEFAULT NULL, size INTEGER NOT NULL, created_at DATETIME NOT NULL --(DC2Type:datetime_immutable)
+            , updated_at DATETIME NOT NULL --(DC2Type:datetime_immutable)
+            )
         SQL);
     }
 

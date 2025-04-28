@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Product - {{ product.name }}
+{% endblock %}
+
+
+{% block body %}
+	<div class="container">
+		<nav aria-label="breadcrumb"  style="--pico-nav-breadcrumb-divider: '✨';">
+			<ul>
+				<li><a href="{{ path('product_index') }}">Products</a></li>
+				<li>{{ product.name }}</li>
+			</ul>
+		</nav>
+		<table>
+			<thead>
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">Name</th>
+				<th scope="col">Description</th>
+				<th scope="col">Size (ML)</th>
+			</tr>
+			</thead>
+			<tbody>
+			<tr>
+				<th scope="row">{{ product.id }}</th>
+				<th scope="row">{{ product.name }}</th>
+				<td>{{ product.description }}</td>
+				<td>{{ product.size }}</td>
+			</tr>
+			</tbody>
+		</table>
+	</div>
+{% endblock %}
+
+
