@@ -86,8 +86,8 @@ final class ProductFactory extends PersistentProxyObjectFactory
      */
     protected function initialize(): static
     {
-        return $this
-            // ->afterInstantiate(function(Product $product): void {})
-        ;
+      return $this
+          // ->afterInstantiate(function(Product $product): void {})
+      ;
     }
 }
